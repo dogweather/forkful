@@ -1,8 +1,12 @@
 # Forkful
 
-<img align="right" width="40%" src="https://github.com/dogweather/forkful/assets/150670/115e265f-5c4d-4533-91e6-d2f6987c7850">
+<img align="right" width="40%" src="https://github.com/dogweather/forkful/assets/150670/ff16cb6b-4019-452a-9d22-c9cd70e4bd90">
 
-A programming cookbook that's collaborative, polyglot, and multilingual. 
+A special programming cookbook:
+
+* Collaborative—AI, a capybara (me), and open source contributors (you)
+* Multilingual—16 world languages
+* Polyglot—21 programming languages
 
 This repo contains all the [Forkful](https://forkful.ai) pages starting [here](https://github.com/dogweather/forkful/tree/master/content), and the [Discussions](https://github.com/dogweather/forkful/discussions).
 
