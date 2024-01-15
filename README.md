@@ -4,13 +4,13 @@
 
 A special programming cookbook:
 
-* Collaborative—AI, a capybara (me), and open source contributors (you)
-* Multilingual—16 world languages
-* Polyglot—21 programming languages
+* **Collaborative**: AI + a capybara (me) + open source contributors (you)
+* **Multilingual**: 16 world languages
+* **Polyglot**: 21 programming languages
 
 This repo contains all the [Forkful](https://forkful.ai) pages starting [here](https://github.com/dogweather/forkful/tree/master/content), and the [Discussions](https://github.com/dogweather/forkful/discussions).
 
-## Languages
+## World Languages
 
 Is there a language we should add? [Post a message in the forum](https://github.com/dogweather/forkful/discussions/categories/ideas).
 
