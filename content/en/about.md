@@ -6,7 +6,7 @@ type:  page
 I always liked "Cookbook"-style documentation the most.
 
 I decided to make my own in December 2023 when I needed to know how to do
-a simple debug/print in Haskell. I think I'm just not
+**a simple debug/print** in Haskell. I think I'm just not
 intelligent enough to understand [the Haskell Wiki's entry](https://en.wikibooks.org/wiki/Haskell/Debugging).
 
 I've coded in a ton of programming languages, and I'm not looking
@@ -17,7 +17,7 @@ As in,
 > It will print `message` and return `x`. It's transparent to the rest
 > of your code.
 
-Now that's something my small brain can understand.
+**That's** something my small brain can understand.
 
 Now, is the 
 [Forkful Haskell page for debug print](/en/haskell/printing-debug-output/) as understandable? It's not as dead simple as I imagined,
@@ -26,7 +26,7 @@ but I think the me of a month ago would have understood it. I'm actively fine-tu
 Another thing I've always wanted to start building: web sites where every
 page can be edited on GitHub.
 
-Finally, with AI getting so useful, I can make this site in "all the languages".
+Finally, with AI (OpenAI their API) getting so useful, I can make this site in "all the languages".
 And then somehow still allow people to edit and contribute. We'll see how that goes.
 
 Robert
