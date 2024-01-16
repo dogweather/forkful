@@ -4,7 +4,7 @@
 
 A special programming cookbook:
 
-**Collaborative**: a _Zusammenarbeit_ between
+**Collaborative**:
 1. A capybara (me)
 2. Open source contributors (you)
 3. AI
