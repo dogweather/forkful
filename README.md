@@ -5,9 +5,9 @@
 A special programming cookbook:
 
 **Collaborative**: a _Zusammenarbeit_ between
-1. AI
-2. A capybara (me)
-3. Open source contributors (you)
+1. A capybara (me)
+2. Open source contributors (you)
+3. AI
  
 **Multilingual**: 16 world languages
 
