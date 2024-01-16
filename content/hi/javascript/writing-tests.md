@@ -1,7 +1,7 @@
 ---
-title:                "प्रोग्रामिंग कोड लिखना"
-html_title:           "Javascript: प्रोग्रामिंग कोड लिखना"
-simple_title:         "प्रोग्रामिंग कोड लिखना"
+title:                "परीक्षाएं लिखना"
+html_title:           "Javascript: परीक्षाएं लिखना"
+simple_title:         "परीक्षाएं लिखना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -10,57 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu
+## क्यों
+जावास्क्रिप्ट प्रोग्रामिंग एक काफी लोकप्रिय और प्रभावी तरीका है वेब डेवलपमेंट का। जब आप किसी ऐप्लिकेशन को बनाते हैं, आप चाहते हैं कि आपका कोड ठीक से काम करे और इसमें कोई बग न हो। टेस्टिंग आपको अपने कोड की सुरक्षा और चाल को ध्यान में रखने में मदद करता है और ऐसे बग्स को पकड़ने में आपकी मदद करता है।
 
-Tests likhna koi optional kaam nahi hai, balki ye ek zaroori step hai code quality ko improve karne ke liye. Isse hum apne code par confidence rakhte hain aur bugs ko pehle se hi detect kar sakte hain, jisse bug fixing time reduce hojata hai.
-
-## Kaise Kare
-
-Unit tests banana bahut hi aasan hai. Pehle hum chai chai (chai assertion library) ka use kartein hain, phir mocha (testing framework) ka use kartein hain.
-
+## कैसे करें
 ```
-// chai ke saath chai chai install karna
-npm install chai -D
-// mocha install karna, -g flag use karke globally install karna hai
-npm install mocha -g
+अब आपको मजबूत और सुरक्षित कोड लिखना है।
 ```
+```Javascript
+// उदाहरण 1: साधारण गणना को चालू करें
+function add(num1, num2) {
+  return num1 + num2;
+}
 
-Ab chai chai aur mocha ko use karke ek test file create karenge.
+// यदि समान परीक्षा फेल हो जाता है, तो टेस्ट फेल हो जाता है
+test("5 + 3 देखो क्या समान है", () => {
+  expect(add(5, 3)).toBe(8);
+});
 
-```
-// test.js file create karke chai chai aur mocha ko import karna
-var expect = require('chai').expect;
-var assert = require('chai').assert;
-var request = require('chai').request;
-var app = require('../server.js');
-
-// describe aur it functions use karke ek test case create karna
-describe('GET /user', function() {
-  it('should return a 200 response', function(done) {
-    request(app)
-      .get('/user')
-      .expect(200, done);
-  });
-  it('should return an array of users', function(done) {
-    request(app)
-      .get('/user')
-      .expect(function(res) {
-        expect(res.body).to.be.an('array');
-        assert.isEmpty(res.body);
-      })
-      .end(done);
-  });
+// यदि समान परीक्षा ठीक से पास हो जाती है, तो टेस्ट सफल हो जाता है
+test("2 + 2 देखो क्या समान है", () => {
+  expect(add(2, 2)).toBe(4);
 });
 ```
 
-Code ke upar dekhein, chai chai ke saath chai banner use karke hum chai chai library ko import karke chai aur assert objects ko initialize kar sakte hain. Phir chai chai ka use karke chai chai banner se chai chai objects create kar sakte hain. Chai chai banner ke baad chai chai ka use karein aur expect aur assert objects ko chai chai banner se initialize karein. Phir mocha banner use karke mocha library ko import karein. Pher mocha ke functions describe aur it ka use karke hum apne test cases likh sakte hain.
+यहां, हमने साधारण गणना के लिए एक टेस्ट केस बनाया है जो सुनिश्चित करेगा कि हमारा कोड चालू है या नहीं। टेस्ट फ़ंक्शन के भीतर हमने संभावित नतीजे को प्रत्याशित नतीजे के साथ तुलना की है। अगर परीक्षण में कोई गलती होती है, तो टेस्ट फेल हो जाता है। इस तरह, हम अपने कोड को अनुभव से गुज़राने और सुरक्षित बनाए रख सकते हैं।
 
-## Deep Dive
-
-Unit tests likhna humare code ko prepared rakhte hain unexpected errors aur bugs ke liye. Tests ke help se hum apne code ko robust bana sakte hain aur future mein modifications ko asaani se implement kar sakte hain. Isse humari productivity aur code quality dono hi improve hoti hai.
-
-## Aage Dekhein
-
-- [Chai Assertion Library](https://www.chaijs.com/) 
-- [Mocha Testing Framework](https://mochajs.org/) 
-- [Unit Testing in Javascript](https://www.freecodecamp.org/news/javascript-unit-testing-for-beginners-9182d13a3cc1/)
+## गहराई में जाएँ
+टेस्ट की एक और महत्वपूर्ण गुणवत्ता है कि यह आपको कोड का पुनरावल

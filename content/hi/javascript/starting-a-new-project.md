@@ -1,7 +1,7 @@
 ---
-title:                "एक नया प्रोजेक्ट शुरू करना"
-html_title:           "Javascript: एक नया प्रोजेक्ट शुरू करना"
-simple_title:         "एक नया प्रोजेक्ट शुरू करना"
+title:                "एक नया परियोजना शुरू करना"
+html_title:           "Javascript: एक नया परियोजना शुरू करना"
+simple_title:         "एक नया परियोजना शुरू करना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Getting Started"
@@ -10,28 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kyun
+## क्यों
 
-Kisi bhi naye project ko shuru karne ka sabse bada karan hai, ki hum apne dimag ki khurak ko kuch naya aur aakarshak sikhna chahte hain. Daal apne software development skills ko improve karne ka yeh ek accha tarika hai.
+नए प्रोजेक्ट की शुरुआत करने में होने वाली इस फायदे के कारण जो आप के लिए है।
 
-# Kaise Karein
+एक नए प्रोजेक्ट की शुरुआत करना शायद कुछ दिनांकों और परेशानियों के साथ आता है, लेकिन इसे करने के कहीं और सारे फायदे भी होते हैं जो आपको जरूरत पड़ सकती है। यह आपको नए सॉफ्टवेयर या अन्य प्रोजेक्ट्स को समझने और हाथ में कुछ नया काम करने की स्वतंत्रता भी प्रदान करता है। नए चुनौतियों से निपटने के लिए जुटाए गए समय और मेहनत से, आप वास्तव में अपनी कौशल को विकसित कर सकते हैं और अपने आप को सार्वजनिक रूप से बन सकते हैं।
+
+## कैसे करें
 
 ```Javascript
-let project = "naya project";
+let project = "नया प्रोजेक्ट"; 
 
-console.log("Main " + project + " shuru karna chahta hoon!");
+console.log(`मेरा ${project} शुरू कर देना ही नहीं है, मुझे अपनी सोच को अंदाजा देने के लिए समय भी देना होगा।`);
 ```
 
-Is code block mein humne ek variable `project` declare kiya aur usmein "naya project" ka value assign kiya. Uske baad `console.log()` function ka use karke humne apne project ka naam print kiya. Ab hum apne project ko chunne ke liye kisi bhi programming language ka use kar sakte hain aur apne creativity ko express kar sakte hain.
+```Javascript
+function startProject(name) {
+  console.log(`मैं ${name} प्रोजेक्ट स्टार्ट कर रहा हूँ!`);
+}
 
-# Gehri Khudaee
+startProject("नया");
+```
 
-Aapko apne project ki shuruwat karne se pehle kuch important steps follow karni chahiye. Pehle toh aapko apne project ke liye ek clear goal set karna hoga. Phir aapko apne project ka scope aur time frame decide karna hoga. Saath hi, aapko apne project ke liye kaunsi tools aur technologies ka use karna hai, yeh bhi decide karna hoga.
+### उत्पादन
+```
+मेरा नया प्रोजेक्ट शुरू कर देना ही नहीं है, मुझे अपनी सोच को अंदाजा देने के लिए समय भी देना होगा।
+मैं नया प्रोजेक्ट स्टार्ट कर रहा हूँ!
+```
 
-# Dekhiye Bhi
+## गहराई तक जाएं
 
-Agar aapko Javascript programming ke baare mein aur bhi jaankari chahiye, toh neeche diye gaye links ko dekhein:
-
-- [W3Schools Javascript Tutorial](https://www.w3schools.com/js/)
-- [Mozilla Developer Network Javascript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [Javascript.com](https://javascript.com/)
+प्रोजेक्ट शुरू करना लिखित कोड के रूप में जाने जाता है जिसे हम ब्राउज़रों में चल सकते हैं। यह बहुत तकनीकी हो सकता है और आप हमेशा नए समस्याओं का सामना कर सकते हैं जो आपको समाधान के लिए अ
