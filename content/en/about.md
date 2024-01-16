@@ -3,14 +3,16 @@ title: About Forkful
 type:  page
 ---
 
+{{< figure src="/robert-at-work.jpeg" rel="me" link="https://dogweather.dev" alt="The author at work" caption="_The author at work_" >}}
+
 I always liked "Cookbook"-style documentation the most.
 
-I decided to make my own in December 2023 when I needed to know how to do
-**a simple debug/print** in Haskell. I think I'm just not
+In December 2023 I decided to make my own. I needed to know how to do
+a **simple debug/print** in Haskell. But I think I'm just not
 intelligent enough to understand [the Haskell Wiki's entry](https://en.wikibooks.org/wiki/Haskell/Debugging).
 
 I've coded in a ton of programming languages, and I'm not looking
-for a dissertation. 😅 I only wanted to see the very simplest use.
+for a dissertation. 😅 I only wanted to see the very simplest description.
 As in, 
 
 > If you want to debug-print `x`, change it to `(trace "message" x)`.
