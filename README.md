@@ -1,6 +1,6 @@
 # Forkful
 
-<img align="right" width="40%" src="https://github.com/dogweather/forkful/assets/150670/ff16cb6b-4019-452a-9d22-c9cd70e4bd90">
+<img align="right" width="45%" src="https://github.com/dogweather/forkful/assets/150670/7c9b58b3-019e-4708-b341-7a4110ddde5a">
 
 A special programming cookbook:
 
